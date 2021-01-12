@@ -10,29 +10,29 @@
 
 /*
  * @librarys vendors
+ * Bootstrap, aos, animate, ion-icons, font-awesome, themify icons.
  **/
 
 //@import 'vendors/getbootstrap/bootstrap.scss';
-@import 'vendors/aos/aos.scss';
-@import 'vendors/animate/animate-scss.scss';
-@import 'vendors/ionicons/docs/css/ionicons';
-@import 'vendors/font-awesome-4.7.0/scss/font-awesome.scss';
-@import 'vendors/themify-icons/themify-icons.scss';
+//@import 'vendors/aos/aos.scss';
+//@import 'vendors/animate/animate-scss.scss';
+//@import 'vendors/ionicons/docs/css/ionicons';
+//@import 'vendors/font-awesome-4.7.0/scss/font-awesome.scss';
+//@import 'vendors/themify-icons/themify-icons.scss';
 
 /*
- * @componenetes
+ * @Compenentes personalizados
+ *
  * */
 @import 'base/normalize';
-@import 'base/colores';
 @import 'helpers/mixins';
+@import 'base/colores';
 @import 'helpers/helps';
 @import 'base/fonts-google';
 @import 'base/modal';
 @import 'helpers/whidth';
 @import 'components/spinner';
-@import 'components/custom-botones';
 @import 'components/btn';
-@import 'components/zoom-shadow-transicion';
 @import 'components/titles';
 @import 'components/video';
 @import 'components/owl';
