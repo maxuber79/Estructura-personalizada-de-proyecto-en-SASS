@@ -1,0 +1,305 @@
+/* @ CSS border para maquetar */
+.border-1,
+#border-1 {
+    @include border_help(#000);
+}
+
+.border-2,
+#border-2 {
+    @include border_help(red);
+}
+
+.border-3,
+#border-3 {
+    @include border_help(blue);
+}
+
+.border-4,
+#border-4 {
+    @include border_help(deeppink);
+}
+
+/* .container {border: 1px dashed #000;}
+.row {border: 1px dashed red;}  */
+/* @ CSS tamaños de iconos */
+
+
+// CSS Anchos de tipos web
+#mailing {
+    @include type-web (650px, 650px, 1px, dashed, #000);
+}
+
+#landing-page {
+    @include type-web(960px, 960px, 1px, dashed, #333);
+}
+
+.full-width {
+    @include type-web(100%, 100%, 1px, dashed, red);
+}
+
+/* Ayudas de maquetación y mixin
+*--------------------------------------------------------------------*/
+
+.air-margin {
+    @include space_margin();
+}
+
+.air-padding {
+    @include space_padding();
+}
+
+.n0 {
+    @include no_margin;    
+}
+
+.p0 {
+    @include no_padding;
+}
+
+.non-space {
+    /* no espacios en in-block- aplicar en el div padre */
+    font-size: 0;
+    letter-spacing: 0;
+    word-spacing: 0;
+}
+
+.father {
+    position: relative;
+}
+
+.center-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: inline-block;
+}
+
+.element-left {
+    text-align: left;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.element-center {
+    text-align: center;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.element-right {
+    text-align: right;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.full-width {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100%;
+    width: 100%;
+}
+
+.line-hr-black {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    clear: both;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .26), rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .26), rgba(0, 0, 0, 0));
+    background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .26), rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .26), rgba(0, 0, 0, 0));
+}
+
+.line-hr-white {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    clear: both;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, .50), rgba(255, 255, 255, 0));
+    background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 509), rgba(255, 255, 255, 0));
+    background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, .50), rgba(255, 255, 255, 0));
+    background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0), rgba(255, 255, 255, .50), rgba(255, 255, 255, 0));
+}
+
+.effect-shadow-2 {
+    position: relative;
+
+    &:before,
+    &:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 15px;
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width: 300px;
+        background: #777;
+        -webkit-box-shadow: 0 15px 10px #777;
+        -moz-box-shadow: 0 15px 10px #777;
+        box-shadow: 0 15px 10px #777;
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+        -o-transform: rotate(-3deg);
+        -ms-transform: rotate(-3deg);
+        transform: rotate(-3deg);
+    }
+
+    &:after {
+        -webkit-transform: rotate(3deg);
+        -moz-transform: rotate(3deg);
+        -o-transform: rotate(3deg);
+        -ms-transform: rotate(3deg);
+        transform: rotate(3deg);
+        right: 10px;
+        left: auto;
+    }
+}
+
+/* css variables & mixin para fondos
+*---------------------------------------*/
+/*Ej. @include background(#f1f1f1, 'banner-liberamos.jpg', left, center, no-repeat, fixed, cover); */
+$assets_path: 'http://placeimg.com';
+$path_file: '../images/img-servicios';
+
+@mixin background ($bg-color, $img_uri, $value_x, $value_y, $repeat, $attachment, $value_size) {
+    background: $bg-color url(#{$path_file}/#{$img_uri}) $value_x $value_y $repeat $attachment/$value_size;
+}
+
+/* css para captcha google */
+@mixin re-captcha ($value_captcha:.77, $value_origin:0 0) {
+    transform: scale($value_captcha);
+    -webkit-transform: scale($value_captcha);
+    transform-origin: $value_origin;
+    -webkit-transform-origin: $value_origin;
+}
+
+$value_1em:1em;
+$value_1em:2em;
+$value_1em:3em;
+$value_1em:4em;
+
+/* .px-1 {padding-left: 1em;padding-right: 1em;}
+.px-2 {padding-left: 2em;padding-right: 2em;}
+.px-3 {padding-left: 3em;padding-right: 3em;}
+.py-1 {padding-top: 1em;padding-bottom: 1em;}
+.py-2 {padding-top: 2em;padding-bottom: 2em;}
+.py-3 {padding-top: 3em;padding-bottom: 3em;}
+.mx-1 {margin-left: 1em;margin-right: 1em;}
+.mx-2 {margin-left: 2em;margin-right: 2em;}
+.mx-3 {margin-left: 3em;margin-right: 3em;}
+.my-1 {margin-top: 1em;margin-bottom: 1em;}
+.my-2 {margin-top: 2em;margin-bottom: 2em;}
+.my-3 {margin-top: 3em;margin-bottom: 3em;}
+
+$value_1em:1em;
+$value_2em:2em;
+$value_3em:3em;
+$value_4em:4em;
+.pt-1 {padding-top: $value_1em;}.pb-1 {padding-top: $value_1em;}.pl-1 {padding-top: $value_1em;}.pr-1 {padding-top: $value_1em;}
+.pt-2 {padding-top: $value_2em;}.pb-2 {padding-top: $value_2em;}.pl-2 {padding-top: $value_2em;}.pr-2 {padding-top: $value_2em;}
+.pt-3 {padding-top: $value_3em;}.pb-3 {padding-top: $value_3em;}.pl-3 {padding-top: $value_3em;}.pr-3 {padding-top: $value_3em;}
+.pt-4 {padding-top: $value_4em;}.pb-4 {padding-top: $value_4em;}.pl-4 {padding-top: $value_4em;}.pr-4 {padding-top: $value_4em;}
+
+.mt-1 {margin-top: $value_1em;}.mb-1 {margin-top: $value_1em;}.ml-1 {margin-top: $value_1em;}.mr-1 {margin-top: $value_1em;}
+.mt-2 {margin-top: $value_2em;}.mb-2 {margin-top: $value_2em;}.ml-2 {margin-top: $value_2em;}.mr-2 {margin-top: $value_2em;}
+.mt-3 {margin-top: $value_3em;}.mb-3 {margin-top: $value_3em;}.ml-3 {margin-top: $value_3em;}.mr-3 {margin-top: $value_3em;}
+.mt-4 {margin-top: $value_4em;}.mb-4 {margin-top: $value_4em;}.ml-4 {margin-top: $value_4em;}.mr-4 {margin-top: $value_4em;} */
+
+.space-y {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.space-x {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.space-xy {
+    padding: 1.5rem;
+}
+
+/* colores 
+    $apm-1-hex:    #007bff !default;
+    $indigo:  #6610f2 !default;
+    $purple:  #6f42c1 !default;
+    $pink:    #e83e8c !default;
+    $red:     #dc3545 !default;
+    $orange:  #fd7e14 !default;
+    $yellow:  #ffc107 !default;
+    $green:   #28a745 !default;
+    $teal:    #20c997 !default;
+    $cyan:    #17a2b8 !default;
+*/
+
+.hidden-arrow-select {
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari and Chrome */
+    appearance: none;
+}
+
+.hidden-arrow-select::-ms-expand {
+    display: none;
+}
+
+
+
+
+
+
+.vertical-centering {
+    display: table;
+    width: 100%;
+    min-height: 100%;
+
+    @media(max-width: 640px) {
+        display: block;
+        height: auto;
+        text-align: center;
+    }
+
+    .vertical-object {
+        display: table-cell;
+        vertical-align: middle;
+
+        @media(max-width: 640px) {
+            display: inline-block;
+            height: auto;
+        }
+
+        &.object-left {
+            text-align: left;
+            width: 100%;
+
+            @media(max-width: 640px) {
+                text-align: center;
+            }
+        }
+
+        &.object-right {
+            text-align: right;
+            width: 100%;
+
+            @media(max-width: 640px) {
+                text-align: center;
+            }
+        }
+
+        &.object-center {
+            text-align: center;
+            width: 100%;
+
+            @media(max-width: 640px) {
+                text-align: center;
+            }
+        }
+    }
+}
