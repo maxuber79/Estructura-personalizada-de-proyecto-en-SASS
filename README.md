@@ -1,4 +1,4 @@
-# Estructura de un Proyecto con Sass/Scss
+# Estructura de un Proyecto con Sass/Scss customizada segun mi criterio
 Proyecto de una estructura optima de archivos y carpetas en SASS/SCSS para un proyecto web.
 
 # Archivos adicionales
