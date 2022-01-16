@@ -1,4 +1,4 @@
-# Estructura de un Proyecto con Sass/Scss customizada segun mi criterio
+# Frameworks CSS frontend de estilos scss/sass para proyectos en Wordpress
 Proyecto de una estructura optima de archivos y carpetas en SASS/SCSS para un proyecto web.
 
 # Archivos adicionales
